@@ -18,6 +18,21 @@
     <ClCompile Include="EnginePch.cpp">
       <Filter>2Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>0Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandQueue.cpp">
+      <Filter>0Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Device.cpp">
+      <Filter>0Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="SwapChain.cpp">
+      <Filter>0Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="DescriptorHeap.cpp">
+      <Filter>0Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -28,6 +43,21 @@
     </ClInclude>
     <ClInclude Include="d3dx12.h">
       <Filter>2Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>0Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandQueue.h">
+      <Filter>0Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Device.h">
+      <Filter>0Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="SwapChain.h">
+      <Filter>0Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="DescriptorHeap.h">
+      <Filter>0Engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
