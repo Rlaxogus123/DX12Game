@@ -1,17 +1,16 @@
 #include "pch.h"
 #include "CommandQueue.h"
 #include "SwapChain.h"
-#include "DescriptorHeap.h"
+#include "Engine.h"
 
 CommandQueue::~CommandQueue()
 {
 	::CloseHandle(_fenceEvent);
 }
 
-void CommandQueue::Init(ComPtr<ID3D12Device> device, shared_ptr<SwapChain> swapChain, shared_ptr<DescriptorHeap> descHeap)
+void CommandQueue::Init(ComPtr<ID3D12Device> device, shared_ptr<SwapChain> swapChain)
 {
 	_swapChain = swapChain;
-	_descHeap = descHeap;
 
 	D3D12_COMMAND_QUEUE_DESC queueDesc = {};
 	queueDesc.Type = D3D12_COMMAND_LIST_TYPE_DIRECT;
@@ -59,16 +58,21 @@ void CommandQueue::RenderBegin(const D3D12_VIEWPORT* vp, const D3D12_RECT* rect)
 
 	// 현재 백 버퍼 리소스를 이동시켜 GPU 작업 용도로 이동시키는 요청
 	D3D12_RESOURCE_BARRIER barrier = CD3DX12_RESOURCE_BARRIER::Transition(
-		_swapChain->GetCurrentBackBufferResources().Get(),
+		_swapChain->GetBackRTVBuffer().Get(),
 		D3D12_RESOURCE_STATE_RENDER_TARGET, // 외주 결과물
 		D3D12_RESOURCE_STATE_PRESENT); // 화면 출력
+
+	_cmdList->SetGraphicsRootSignature(ROOT_SIGNATURE.Get());	
+	GEngine->GetConstantBuffer()->Clear();
+
 	_cmdList->ResourceBarrier(1, &barrier);
 
+	// Scissore Rect 설정
 	_cmdList->RSSetViewports(1, vp);
 	_cmdList->RSSetScissorRects(1, rect);
 	
 	// 어떤 버퍼에 그림을 그려야하는지 언급하는 부분
-	D3D12_CPU_DESCRIPTOR_HANDLE backBufferView = _descHeap->GetBackBufferView();
+	D3D12_CPU_DESCRIPTOR_HANDLE backBufferView = _swapChain->GetBackRTV();
 	_cmdList->ClearRenderTargetView(backBufferView, Colors::LightSteelBlue, 0, nullptr);
 	_cmdList->OMSetRenderTargets(1, &backBufferView, FALSE, nullptr);
 }
@@ -76,7 +80,7 @@ void CommandQueue::RenderBegin(const D3D12_VIEWPORT* vp, const D3D12_RECT* rect)
 void CommandQueue::RenderEnd()
 {
 	D3D12_RESOURCE_BARRIER barrier = CD3DX12_RESOURCE_BARRIER::Transition(
-		_swapChain->GetCurrentBackBufferResources().Get(),
+		_swapChain->GetBackRTVBuffer().Get(),
 		D3D12_RESOURCE_STATE_PRESENT, // 화면 출력
 		D3D12_RESOURCE_STATE_RENDER_TARGET); // 외주 결과물
 	_cmdList->ResourceBarrier(1, &barrier);

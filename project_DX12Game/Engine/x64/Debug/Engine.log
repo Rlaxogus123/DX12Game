@@ -1,2 +1,13 @@
-﻿  EnginePch.cpp
+﻿  pch.cpp
+  CommandQueue.cpp
+C:\Tipp7\DX12Game\project_DX12Game\Engine\CommandQueue.cpp(50,38): warning C4244: '인수': 'float'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  ConstantBuffer.cpp
+  Device.cpp
+  Engine.cpp
+  EnginePch.cpp
+  Mesh.cpp
+  RootSignature.cpp
+  Shader.cpp
+  SwapChain.cpp
+  코드를 생성하고 있습니다...
   Engine.vcxproj -> C:\Tipp7\DX12Game\project_DX12Game\Output\Engine.lib
