@@ -9,31 +9,31 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="소스 파일\0Game">
-      <UniqueIdentifier>{5af62b2b-79fd-4eff-b1ae-3ad3f1b73c31}</UniqueIdentifier>
+    <Filter Include="소스 파일\Utils">
+      <UniqueIdentifier>{ba85b981-78c0-4e00-81c6-56efb3afec53}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\1Utils">
-      <UniqueIdentifier>{0e386f51-1152-4eef-9ad6-d2651236a16a}</UniqueIdentifier>
+    <Filter Include="소스 파일\Game">
+      <UniqueIdentifier>{c6b1ff15-4953-4a37-867b-e4f6e7b4f5dc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>소스 파일\Utils</Filter>
+    </ClInclude>
     <ClInclude Include="Client.h">
-      <Filter>소스 파일\1Utils</Filter>
+      <Filter>소스 파일\Utils</Filter>
     </ClInclude>
     <ClInclude Include="framework.h">
-      <Filter>소스 파일\1Utils</Filter>
+      <Filter>소스 파일\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
-      <Filter>소스 파일\1Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>소스 파일\1Utils</Filter>
+      <Filter>소스 파일\Utils</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
-      <Filter>소스 파일\1Utils</Filter>
+      <Filter>소스 파일\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>소스 파일\0Game</Filter>
+      <Filter>소스 파일\Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -51,13 +51,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
-      <Filter>소스 파일\1Utils</Filter>
+      <Filter>소스 파일\Utils</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
-      <Filter>소스 파일\1Utils</Filter>
+      <Filter>소스 파일\Utils</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>소스 파일\0Game</Filter>
+      <Filter>소스 파일\Game</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

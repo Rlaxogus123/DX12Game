@@ -20,3 +20,4 @@ private:
 	ComPtr<ID3D12PipelineState>			_pipelineState;
 	D3D12_GRAPHICS_PIPELINE_STATE_DESC  _pipelineDesc = {};
 };
+

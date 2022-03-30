@@ -7,10 +7,13 @@
 #include "Mesh.h"
 #include "Shader.h"
 #include "ConstantBuffer.h"
+#include "TableDescriptorHeap.h"
+#include "Texture.h"
 
 class Engine
 {
 public:
+
 	void Init(const WindowInfo& info);
 	void Render();
 
@@ -19,13 +22,15 @@ public:
 	shared_ptr<CommandQueue> GetCmdQueue() { return _cmdQueue; }
 	shared_ptr<SwapChain> GetSwapChain() { return _swapChain; }
 	shared_ptr<RootSignature> GetRootSignature() { return _rootSignature; }
-	shared_ptr<ConstantBuffer> GetConstantBuffer() { return _cb; }
+	shared_ptr<ConstantBuffer> GetCB() { return _cb; }
+	shared_ptr<TableDescriptorHeap> GetTableDescHeap() { return _tableDescHeap; }
 
 public:
-	void RenderBegin(); // CommandQueue 넘겨주기 시작
-	void RenderEnd(); // CommandQueue 다 넘김
+	void RenderBegin();
+	void RenderEnd();
 
 	void ResizeWindow(int32 width, int32 height);
+
 private:
 	// 그려질 화면 크기 관련
 	WindowInfo		_window;
@@ -37,5 +42,6 @@ private:
 	shared_ptr<SwapChain> _swapChain;
 	shared_ptr<RootSignature> _rootSignature;
 	shared_ptr<ConstantBuffer> _cb;
+	shared_ptr<TableDescriptorHeap> _tableDescHeap;
 };
 

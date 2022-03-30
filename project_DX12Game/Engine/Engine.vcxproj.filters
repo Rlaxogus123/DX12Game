@@ -1,89 +1,101 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="0Engine">
-      <UniqueIdentifier>{00b9b4a4-f949-4d49-88e3-24cfc100617c}</UniqueIdentifier>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{53dd1d9c-afa2-43de-8545-b68fe1eb95c5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="1Resources">
-      <UniqueIdentifier>{d01560e7-ae89-45eb-9ab5-d56b8c5a28d4}</UniqueIdentifier>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{c5612518-9c4d-408d-926a-9312743d39fa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="2Utils">
-      <UniqueIdentifier>{d849092d-137d-48bc-8865-81d9ff65d140}</UniqueIdentifier>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{300f6233-f1b4-4f18-9360-c9bfe0308e34}</UniqueIdentifier>
     </Filter>
-    <Filter Include="3Shader">
-      <UniqueIdentifier>{40d63d43-dcea-4977-94c3-223357ad7c17}</UniqueIdentifier>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{710a24eb-3b22-4cba-b53b-42897f27a6d4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
-      <Filter>2Utils</Filter>
+      <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="EnginePch.cpp">
-      <Filter>2Utils</Filter>
+      <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="Engine.cpp">
-      <Filter>0Engine</Filter>
+      <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="CommandQueue.cpp">
-      <Filter>0Engine</Filter>
+      <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="Device.cpp">
-      <Filter>0Engine</Filter>
+      <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="SwapChain.cpp">
-      <Filter>0Engine</Filter>
+      <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="RootSignature.cpp">
-      <Filter>0Engine</Filter>
+      <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="Mesh.cpp">
-      <Filter>1Resources</Filter>
+      <Filter>Resource</Filter>
     </ClCompile>
     <ClCompile Include="Shader.cpp">
-      <Filter>1Resources</Filter>
+      <Filter>Resource</Filter>
     </ClCompile>
     <ClCompile Include="ConstantBuffer.cpp">
-      <Filter>0Engine</Filter>
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="TableDescriptorHeap.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Resource</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
-      <Filter>2Utils</Filter>
+      <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="EnginePch.h">
-      <Filter>2Utils</Filter>
+      <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="d3dx12.h">
-      <Filter>2Utils</Filter>
+      <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="Engine.h">
-      <Filter>0Engine</Filter>
+      <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="CommandQueue.h">
-      <Filter>0Engine</Filter>
+      <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="Device.h">
-      <Filter>0Engine</Filter>
+      <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="SwapChain.h">
-      <Filter>0Engine</Filter>
+      <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="RootSignature.h">
-      <Filter>0Engine</Filter>
+      <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="Mesh.h">
-      <Filter>1Resources</Filter>
+      <Filter>Resource</Filter>
     </ClInclude>
     <ClInclude Include="Shader.h">
-      <Filter>1Resources</Filter>
+      <Filter>Resource</Filter>
     </ClInclude>
     <ClInclude Include="ConstantBuffer.h">
-      <Filter>0Engine</Filter>
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="TableDescriptorHeap.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Resource</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Resources\Shader\default.hlsli">
-      <Filter>3Shader</Filter>
+      <Filter>Shader</Filter>
     </None>
   </ItemGroup>
 </Project>
